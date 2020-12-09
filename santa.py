@@ -6,15 +6,15 @@ import smtplib
 
 class partcipatants:
     def __init__(self, name, email, discordName, mailingAddress, deliver, preferences, nogift, allergies, whatAllergies):
-        self.name = name
-        self. email = email
-        self.discordName = discordName
-        self.mailingAddress = mailingAddress
-        self.deliver = deliver
-        self.preferences = preferences
-        self.nogift = nogift
-        self.allergies = allergies
-        self.whatAllergies = whatAllergies
+        self.name = name #1
+        self.email = email #3
+        self.discordName = discordName #2
+        self.mailingAddress = mailingAddress #4
+        self.deliver = deliver #5
+        self.preferences = preferences #6
+        self.nogift = nogift #7
+        self.allergies = allergies #8
+        self.whatAllergies = whatAllergies #9
 
 users = []
 usersLeft = []
@@ -45,12 +45,16 @@ for i in users:
             break
     
     
-    subject = "Testing Python Script"
+    subject = "[Dodo Club] - Secret Santa!"
     body = "Hello " + i.name + "\n\nWe would like to thank you for partcipating in our first Secret Santa Event. \n\n" + "Before we tell you who your giftee will be, we'd like to remind you of a few rules \n" + " \
         1. No troll gifts are allowed, if you do bring a troll gift, your secret santa gift will be given to your giftee. \n \
-        2. Stay within the set budget of $0 to $15 \nNow what you were waiting for, you will be " + giftee.name +"'s Secret Santa! \n\n Here are a few details about " + giftee.name + "\n" + " \
-        -Their Discord username is: " + giftee.discordName + "\n" + "\
-        -They would like " + giftee.preferences + " and dislike " + giftee.nogift +"\n\nWe will be giving out gifts virtually on December 22nd 2020. Please make sure you have your gift delivered before then."
+        2. Stay within the set budget of $0 to $15 \nNow what you were waiting for, you will be " + giftee.name +"'s Secret Santa! \n\n Here are the responses given by " + giftee.name + ": \n" + " \
+        -Discord Username: " + giftee.discordName + "\n" + "\
+        -Are you alright with your secret santa delivering the gift: " + giftee.deliver + "\n" + "\
+        -Mailing Address: " + giftee.mailingAddress +"\n" + "\
+        -Allergies: " + giftee.whatAllergies + "\n" + "\
+        -Gift Preferences: " + giftee.preferences + "\n" + "\
+        -Gifts they do not want: " + giftee.nogift + "\n\n" + "We will be giving out gifts/opening gifts virtually on December 22nd 2020. Please make sure you have your gift delivered before then."
     message = 'Subject: {} \n\n{}'.format(subject,body)
     server.sendmail(config.EMAIL_ADDRESS, i.email, message)
     print("Sent email!")
