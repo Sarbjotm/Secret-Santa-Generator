@@ -30,6 +30,8 @@ After installing [pip](https://pip.pypa.io/en/stable/) and setting up your gmail
 NAME1,EMAIL1
 NAME2,EMAIL2
 ```
+
+You can modify the namesandemails according to your needs, just remember to update the "body" of the emaiil as well
 Now in terminal enter 
 ```bash
 python3 santa.py
